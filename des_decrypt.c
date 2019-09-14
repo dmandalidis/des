@@ -156,7 +156,7 @@ void create_keys(unsigned long long key, unsigned long long *skey)
 	unsigned int i;
 
 	pkey[0] = permute(pc1, key, 64, 56);
-	for (i = 0; i < 17; i++)
+	for (i = 0; i < 15; i++)
         pkey[i+1] = rotate_left_56(pkey[i], erot[i]);
     for (i = 0; i < 16; i++)
         skey[i] = permute(pc2, pkey[i+1], 56, 48);
